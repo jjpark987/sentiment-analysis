@@ -18,6 +18,7 @@ psycopg2-binary = "2.9.9"
 
 # Web Scraper
 playwright = "1.43.0"
+asyncio = "3.4.3"
 pymongo = "4.7.2"
 
 [dev-packages]
