@@ -7,9 +7,22 @@ from typing import List
 
 connection_string = f'mongodb+srv://jjpark987:{urllib.parse.quote_plus(os.environ.get('MONGODB_PWD'))}@sentimentanalysis.pnbmoui.mongodb.net/'
 mongo_client = MongoClient(connection_string)
+web_scraper_db = mongo_client.web_scraper
 
-dbs = mongo_client.list_database_names()
-print(dbs)
+# create
+def insert_product_doc():
+    products_col = web_scraper_db.products
+    test_doc = {
+        'name': 'winter gloves',
+        'type': 'test'
+    }
+    inserted_id = products_col.insert_one(test_doc).inserted_id
+    print(inserted_id)
+
+# read
+
+# update
+
 
 # async def run(playwright: Playwright, url: str):
 #     chromium = playwright.chromium
