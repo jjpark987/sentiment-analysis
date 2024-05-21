@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from web_scraper.views import get_product_keyword
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('get-product-keyword/', get_product_keyword, name='get_product_keyword')
 ]

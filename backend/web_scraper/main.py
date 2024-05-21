@@ -28,22 +28,43 @@ from typing import List
 #     list(products)
 
 #     # for product in products:
-#     #     printer.pprint(product)
+#     #     printer.pprint(product)       
 
-# coroutine function
+
+async def search_for_product(keyword):
+    pass
+
+async def scrape_product_details(product_id):
+    pass
+
+async def scrape_reviews(product_id):
+    pass
+
 async def main():
     async with async_playwright() as playwright:
-        await run(playwright)
+        chromium = playwright.chromium
+        browser = await chromium.launch()
+        page = await browser.new_page()
+        await page.goto("https://www.amazon.com/ref=nav_logo")
+        
+        while True:
+            keyword = await get_product_keyword()
+            asyncio.create_task(search_for_product(keyword))
+            
+            # product_id = await get_product_id()
+            # asyncio.create_task(scrape_product_details(product_id))
+
+            # initiate = await get_analysis_request()
+            # asyncio.create_task(scrape_reviews(initiate, product_id))
+
+        await browser.close()
 
 async def run(playwright: Playwright, keyword, product_id):
-    chromium = playwright.chromium
-    browser = await chromium.launch()
-    page = await browser.new_page()
-    await page.goto("https://www.amazon.com/ref=nav_logo")
+    
 
     # when frontend user enters a product keyword to search
     # how do i get keyword from frontend -> backend -> here?
-    products = await search_for_product(page, keyword)
+    products = await search(page, keyword)
     await save_products(products)
     await to_api(products)
     
@@ -57,10 +78,10 @@ async def run(playwright: Playwright, keyword, product_id):
     reviews = await get_product_reviews(page)
     await save_product_reviews(reviews)
 
-    await browser.close()
+    
 
 
-async def search_for_product(page, keyword) -> List[dict]:
+async def search(page, keyword) -> List[dict]:
     pass
     # search for a product keyword on Amazon
     # scrape the first five products
