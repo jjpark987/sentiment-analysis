@@ -78,7 +78,6 @@ from typing import List
 #     # for each product scrape
 #         # name
 #         # image_url
-#         # seller
 #         # latest_price
 #     # return list of dict each representing product
 
@@ -98,7 +97,6 @@ from typing import List
 #     # go to product site on Amazon
 #     # scrape details on that product
 #         # description
-#         # category
 #         # url
 
 # async def save_product_details(product):
