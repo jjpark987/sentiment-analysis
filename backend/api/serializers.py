@@ -26,9 +26,4 @@ class AnalysisSerializer(serializers.ModelSerializer):
     class Meta:
         model = Analysis
         fields = ['id', 'title', 'response', 'created_at', 'user', 'product', 'reviews']
-        extra_kwargs = {
-            'user': {'read_only': True},
-            'product': {'read_only': True},
-            'reviews': {'read_only': True},
-        }
         

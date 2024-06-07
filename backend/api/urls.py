@@ -9,7 +9,7 @@ router.register(r'analyses', AnalysisViewSet, basename='analysis')
 
 urlpatterns = [    
     path('', include(router.urls)),
-    # JWT token based authentication
+    # jwt token based authentication
     path('token/', TokenObtainPairView.as_view(), name='get_token'),    # POST
     path('token/refresh/', TokenRefreshView.as_view(), name='refresh'),  # POST
 ]

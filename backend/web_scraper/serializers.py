@@ -10,7 +10,4 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         fields = ['id', 'title', 'rating', 'content', 'location', 'date', 'helpfulness', 'created_at', 'product']
-        extra_kwargs = {
-            'product': {'read_only': True},
-        }
         

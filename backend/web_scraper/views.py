@@ -2,21 +2,24 @@ from rest_framework import viewsets, permissions
 from rest_framework_simplejwt import authentication
 from .models import Product, Review
 from .serializers import ProductSerializer, ReviewSerializer
-from django.views.decorators.csrf import csrf_exempt
+# from django.views.decorators.csrf import csrf_exempt
 
-class ProductViewSet(viewsets.ModelViewSet):
+class BaseViewSet(viewsets.ModelViewSet):
+    authentication_classes = [authentication.JWTAuthentication]
+    allowed_actions = ['list', 'retrieve', 'create', 'destroy']
+
+    def get_permissions(self):
+        if self.action == 'destroy':
+            return [permissions.IsAdminUser()]
+        return [permissions.IsAuthenticated()]
+
+class ProductViewSet(BaseViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    authentication_classes = [authentication.JWTAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
-    allowed_actions = ['list', 'retrieve', 'create', 'destroy']
 
-class ReviewViewSet(viewsets.ModelViewSet):
+class ReviewViewSet(BaseViewSet):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
-    authentication_classes = [authentication.JWTAuthentication]
-    permission_classes = [permissions.IsAuthenticated]
-    allowed_actions = ['list', 'retrieve', 'create', 'destroy']
 
 # @csrf_exempt
 # async def get_search_query(request):
