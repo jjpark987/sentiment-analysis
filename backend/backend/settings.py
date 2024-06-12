@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 from datetime import timedelta
+from celery import Celery
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -147,3 +148,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGNS = True
 CORS_ALLOWS_CREDENTIALS = True
+
+# Celery configuration
+# Initialize Celery
+celery = Celery('sentiment_analysis')
+# RabbitMQ broker URL
+celery.conf.broker_url = 'amqp://guest:guest@localhost'
+# PostgreSQL result backend
+# celery.conf.result_backend = 'db+postgresql://your_username:your_password@localhost/your_database_name'
