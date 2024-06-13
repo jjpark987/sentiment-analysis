@@ -1,0 +1,77 @@
+25845:C 12 Jun 2024 19:03:06.863 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+25845:C 12 Jun 2024 19:03:06.863 * Redis version=7.2.5, bits=64, commit=00000000, modified=0, pid=25845, just started
+25845:C 12 Jun 2024 19:03:06.863 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+25845:M 12 Jun 2024 19:03:06.864 * Increased maximum number of open files to 10032 (it was originally set to 2560).
+25845:M 12 Jun 2024 19:03:06.864 * monotonic clock: POSIX clock_gettime
+25845:M 12 Jun 2024 19:03:06.867 * Running mode=standalone, port=6379.
+25845:M 12 Jun 2024 19:03:06.867 # WARNING: The TCP backlog setting of 511 cannot be enforced because kern.ipc.somaxconn is set to the lower value of 128.
+25845:M 12 Jun 2024 19:03:06.867 * Server initialized
+25845:M 12 Jun 2024 19:03:06.868 * Ready to accept connections tcp
+25845:M 12 Jun 2024 19:11:31.945 * User requested shutdown...
+25845:M 12 Jun 2024 19:11:31.945 * Saving the final RDB snapshot before exiting.
+25845:M 12 Jun 2024 19:11:31.953 * DB saved on disk
+25845:M 12 Jun 2024 19:11:31.954 # Redis is now ready to exit, bye bye...
+26738:C 12 Jun 2024 19:11:33.003 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+26738:C 12 Jun 2024 19:11:33.003 * Redis version=7.2.5, bits=64, commit=00000000, modified=0, pid=26738, just started
+26738:C 12 Jun 2024 19:11:33.003 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+26738:M 12 Jun 2024 19:11:33.004 * Increased maximum number of open files to 10032 (it was originally set to 2560).
+26738:M 12 Jun 2024 19:11:33.004 * monotonic clock: POSIX clock_gettime
+26738:M 12 Jun 2024 19:11:33.006 * Running mode=standalone, port=6379.
+26738:M 12 Jun 2024 19:11:33.006 # WARNING: The TCP backlog setting of 511 cannot be enforced because kern.ipc.somaxconn is set to the lower value of 128.
+26738:M 12 Jun 2024 19:11:33.007 * Server initialized
+26738:M 12 Jun 2024 19:11:33.007 * Loading RDB produced by version 7.2.5
+26738:M 12 Jun 2024 19:11:33.007 * RDB age 2 seconds
+26738:M 12 Jun 2024 19:11:33.007 * RDB memory usage when created 1.08 Mb
+26738:M 12 Jun 2024 19:11:33.007 * Done loading RDB, keys loaded: 0, keys expired: 0.
+26738:M 12 Jun 2024 19:11:33.007 * DB loaded from disk: 0.001 seconds
+26738:M 12 Jun 2024 19:11:33.007 * Ready to accept connections tcp
+26773:C 12 Jun 2024 19:12:46.245 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+26773:C 12 Jun 2024 19:12:46.245 * Redis version=7.2.5, bits=64, commit=00000000, modified=0, pid=26773, just started
+26773:C 12 Jun 2024 19:12:46.245 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+26773:M 12 Jun 2024 19:12:46.246 * Increased maximum number of open files to 10032 (it was originally set to 2560).
+26773:M 12 Jun 2024 19:12:46.246 * monotonic clock: POSIX clock_gettime
+26773:M 12 Jun 2024 19:12:46.248 * Running mode=standalone, port=6379.
+26773:M 12 Jun 2024 19:12:46.248 # WARNING: The TCP backlog setting of 511 cannot be enforced because kern.ipc.somaxconn is set to the lower value of 128.
+26773:M 12 Jun 2024 19:12:46.248 * Server initialized
+26773:M 12 Jun 2024 19:12:46.248 * Loading RDB produced by version 7.2.5
+26773:M 12 Jun 2024 19:12:46.248 * RDB age 75 seconds
+26773:M 12 Jun 2024 19:12:46.248 * RDB memory usage when created 1.08 Mb
+26773:M 12 Jun 2024 19:12:46.249 * Done loading RDB, keys loaded: 0, keys expired: 0.
+26773:M 12 Jun 2024 19:12:46.249 * DB loaded from disk: 0.000 seconds
+26773:M 12 Jun 2024 19:12:46.249 * Ready to accept connections tcp
+26773:signal-handler (1718245295) Received SIGTERM scheduling shutdown...
+26773:M 12 Jun 2024 19:21:35.158 * User requested shutdown...
+26773:M 12 Jun 2024 19:21:35.158 * Saving the final RDB snapshot before exiting.
+26773:M 12 Jun 2024 19:21:35.167 * DB saved on disk
+26773:M 12 Jun 2024 19:21:35.167 # Redis is now ready to exit, bye bye...
+27402:C 12 Jun 2024 19:21:41.786 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+27402:C 12 Jun 2024 19:21:41.787 * Redis version=7.2.5, bits=64, commit=00000000, modified=0, pid=27402, just started
+27402:C 12 Jun 2024 19:21:41.787 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+27402:M 12 Jun 2024 19:21:41.787 * monotonic clock: POSIX clock_gettime
+27402:M 12 Jun 2024 19:21:41.789 * Running mode=standalone, port=6379.
+27402:M 12 Jun 2024 19:21:41.789 # WARNING: The TCP backlog setting of 511 cannot be enforced because kern.ipc.somaxconn is set to the lower value of 128.
+27402:M 12 Jun 2024 19:21:41.789 * Server initialized
+27402:M 12 Jun 2024 19:21:41.789 * Ready to accept connections tcp
+27402:signal-handler (1718245722) Received SIGTERM scheduling shutdown...
+27402:M 12 Jun 2024 19:28:42.263 * User requested shutdown...
+27402:M 12 Jun 2024 19:28:42.263 * Saving the final RDB snapshot before exiting.
+27402:M 12 Jun 2024 19:28:42.271 * DB saved on disk
+27402:M 12 Jun 2024 19:28:42.271 # Redis is now ready to exit, bye bye...
+28567:C 12 Jun 2024 19:38:06.513 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+28567:C 12 Jun 2024 19:38:06.513 * Redis version=7.2.5, bits=64, commit=00000000, modified=0, pid=28567, just started
+28567:C 12 Jun 2024 19:38:06.513 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+28567:M 12 Jun 2024 19:38:06.514 * monotonic clock: POSIX clock_gettime
+28567:M 12 Jun 2024 19:38:06.515 * Running mode=standalone, port=6379.
+28567:M 12 Jun 2024 19:38:06.515 # WARNING: The TCP backlog setting of 511 cannot be enforced because kern.ipc.somaxconn is set to the lower value of 128.
+28567:M 12 Jun 2024 19:38:06.516 * Server initialized
+28567:M 12 Jun 2024 19:38:06.516 * Loading RDB produced by version 7.2.5
+28567:M 12 Jun 2024 19:38:06.516 * RDB age 564 seconds
+28567:M 12 Jun 2024 19:38:06.516 * RDB memory usage when created 1.50 Mb
+28567:M 12 Jun 2024 19:38:06.517 * Done loading RDB, keys loaded: 3, keys expired: 0.
+28567:M 12 Jun 2024 19:38:06.517 * DB loaded from disk: 0.001 seconds
+28567:M 12 Jun 2024 19:38:06.517 * Ready to accept connections tcp
+28567:signal-handler (1718246415) Received SIGTERM scheduling shutdown...
+28567:M 12 Jun 2024 19:40:15.919 * User requested shutdown...
+28567:M 12 Jun 2024 19:40:15.919 * Saving the final RDB snapshot before exiting.
+28567:M 12 Jun 2024 19:40:15.928 * DB saved on disk
+28567:M 12 Jun 2024 19:40:15.928 # Redis is now ready to exit, bye bye...

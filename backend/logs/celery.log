@@ -1,0 +1,42 @@
+ 
+ -------------- celery@MacBook-Pro-2021.local v5.4.0 (opalescent)
+--- ***** ----- 
+-- ******* ---- macOS-14.5-x86_64-i386-64bit 2024-06-13 02:21:42
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x10d8c2960
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 10 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+
+
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@MacBook-Pro-2021.local v5.4.0 (opalescent)
+--- ***** ----- 
+-- ******* ---- macOS-14.5-x86_64-i386-64bit 2024-06-13 02:38:07
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         backend:0x10bd344a0
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 10 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+
+
+
+worker: Warm shutdown (MainProcess)

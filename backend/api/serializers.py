@@ -1,27 +1,34 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import Analysis
+from .models import SearchQuery, Product, Review, Analysis
 
 class UserSerializer(serializers.ModelSerializer):
-    # defines the fields to be included in the serializer
     class Meta:
-        # specifies django model for this serializer
         model = User
-        # lists the fields to be serialized
         fields = ['id', 'username', 'password']
-        # specifies additional options for specific fields
-        # {'write_only': True} means the password field won't be returned in the response
         extra_kwargs = {
             'password': {'write_only': True},
         }
 
-    # called by the view to create new user
     def create(self, validated_data):
-        # creates new user instance using validated data
-        # **validated_data unpacks dictionary as keyword arguments
         user = User.objects.create_user(**validated_data)
         return user
-    
+
+class SearchQuerySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SearchQuery
+        fields = ['id', 'query', 'created_at', 'user']
+
+class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = ['id', 'name', 'image_url', 'latest_price', 'seller', 'description', 'url', 'created_at', 'updated_at', 'favorited_by']
+
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = ['id', 'title', 'rating', 'content', 'location', 'date', 'helpfulness', 'created_at', 'product']
+
 class AnalysisSerializer(serializers.ModelSerializer):
     class Meta:
         model = Analysis
