@@ -1,48 +1,24 @@
-/Users/jjpark987/Desktop/sentiment_analysis/.venv/lib/python3.12/site-packages/celery/platforms.py:829: SecurityWarning: You're running the worker with superuser privileges: this is
-absolutely not recommended!
+Usage: celery [OPTIONS] COMMAND [ARGS]...
+Try 'celery --help' for help.
 
-Please specify a different user using the --uid option.
+Error: Invalid value for '-A' / '--app': 
+Unable to load celery application.
+Module 'backend' has no attribute 'celery'
+Usage: celery [OPTIONS] COMMAND [ARGS]...
+Try 'celery --help' for help.
 
-User information: uid=0 euid=0 gid=0 egid=0
+Error: Invalid value for '-A' / '--app': 
+Unable to load celery application.
+Module 'backend' has no attribute 'celery'
+Usage: celery [OPTIONS] COMMAND [ARGS]...
+Try 'celery --help' for help.
 
-  warnings.warn(SecurityWarning(ROOT_DISCOURAGED.format(
-[2024-06-13 02:21:43,073: WARNING/MainProcess] /Users/jjpark987/Desktop/sentiment_analysis/.venv/lib/python3.12/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
-whether broker connection retries are made during startup in Celery 6.0 and above.
-If you wish to retain the existing behavior for retrying connections on startup,
-you should set broker_connection_retry_on_startup to True.
-  warnings.warn(
+Error: Invalid value for '-A' / '--app': 
+Unable to load celery application.
+Module 'backend' has no attribute 'celery'
+Usage: celery [OPTIONS] COMMAND [ARGS]...
+Try 'celery --help' for help.
 
-[2024-06-13 02:21:43,086: INFO/MainProcess] Connected to redis://localhost:6379/0
-[2024-06-13 02:21:43,087: WARNING/MainProcess] /Users/jjpark987/Desktop/sentiment_analysis/.venv/lib/python3.12/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
-whether broker connection retries are made during startup in Celery 6.0 and above.
-If you wish to retain the existing behavior for retrying connections on startup,
-you should set broker_connection_retry_on_startup to True.
-  warnings.warn(
-
-[2024-06-13 02:21:43,089: INFO/MainProcess] mingle: searching for neighbors
-[2024-06-13 02:21:44,098: INFO/MainProcess] mingle: all alone
-[2024-06-13 02:21:44,112: INFO/MainProcess] celery@MacBook-Pro-2021.local ready.
-/Users/jjpark987/Desktop/sentiment_analysis/.venv/lib/python3.12/site-packages/celery/platforms.py:829: SecurityWarning: You're running the worker with superuser privileges: this is
-absolutely not recommended!
-
-Please specify a different user using the --uid option.
-
-User information: uid=0 euid=0 gid=0 egid=0
-
-  warnings.warn(SecurityWarning(ROOT_DISCOURAGED.format(
-[2024-06-13 02:38:07,581: WARNING/MainProcess] /Users/jjpark987/Desktop/sentiment_analysis/.venv/lib/python3.12/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
-whether broker connection retries are made during startup in Celery 6.0 and above.
-If you wish to retain the existing behavior for retrying connections on startup,
-you should set broker_connection_retry_on_startup to True.
-  warnings.warn(
-
-[2024-06-13 02:38:07,592: INFO/MainProcess] Connected to redis://localhost:6379/0
-[2024-06-13 02:38:07,593: WARNING/MainProcess] /Users/jjpark987/Desktop/sentiment_analysis/.venv/lib/python3.12/site-packages/celery/worker/consumer/consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
-whether broker connection retries are made during startup in Celery 6.0 and above.
-If you wish to retain the existing behavior for retrying connections on startup,
-you should set broker_connection_retry_on_startup to True.
-  warnings.warn(
-
-[2024-06-13 02:38:07,596: INFO/MainProcess] mingle: searching for neighbors
-[2024-06-13 02:38:08,604: INFO/MainProcess] mingle: all alone
-[2024-06-13 02:38:08,623: INFO/MainProcess] celery@MacBook-Pro-2021.local ready.
+Error: Invalid value for '-A' / '--app': 
+Unable to load celery application.
+Module 'backend' has no attribute 'celery'
