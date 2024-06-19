@@ -1,14 +1,16 @@
 import asyncio
-from ..celery import app
+import uuid
+from celery import shared_task
 from playwright.async_api import async_playwright, Playwright
+from ..browser_page import browser_page
 
-@app.task
+@shared_task
 def start_event_loop():
-    asyncio.run(main())
+    return asyncio.run(main())
 
-async def main(search_query):
+async def main():
     async with async_playwright() as playwright:
-        await run(playwright)
+        return await run(playwright)
 
 async def run(playwright: Playwright):
     chromium = playwright.chromium
@@ -17,4 +19,9 @@ async def run(playwright: Playwright):
 
     await page.goto("http://books.toscrape.com")
 
-    await browser.close()
+    await page.wait_for_timeout(3000)
+
+    key = str(uuid.uuid4())
+    browser_page[key] = (browser, page)
+
+    return key
