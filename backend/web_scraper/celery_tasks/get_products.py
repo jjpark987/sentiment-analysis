@@ -1,14 +1,26 @@
 from celery import shared_task
-from ..browser_page import browser_page
+from playwright.async_api import async_playwright, Playwright
+from django_redis import get_redis_connection
+import uuid
 
 @shared_task
-async def search_for_products(key):
-    browser, page = browser_page.get(key, (None, None))
+async def get_products():
+    async with async_playwright() as playwright:
+        browser = await playwright.chromium.launch(headless=False)
+        page = await browser.new_page()
+        print('START_PLAYWRIGHT HAS STARTED AND IT IS WORKING RIGHT NOW')
+        await page.goto("http://books.toscrape.com")
 
-    if not browser or not page:
-        raise ValueError("Invalid key, browser or page not found.")
+        await page.wait_for_timeout(3000)
 
-    await page.goto("https://books.toscrape.com/catalogue/category/books/horror_31/index.html")
-    await page.wait_for_timeout(3000)
+        # code to search on Amazon
+        # ...
 
-    return key
+        # Generate a unique key for cache entry
+        cache_key = f"playwright_objects_{uuid.uuid4()}"
+
+        # Store browser and page objects in Redis cache
+        get_redis_connection().set(cache_key, (browser, page))
+
+        # Return the cache key for subsequent tasks
+        return cache_key

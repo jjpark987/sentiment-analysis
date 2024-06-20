@@ -1,11 +1,9 @@
 from django.http import JsonResponse
 from django.views import View
 from .task_manager import ScraperTaskManager
-from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import csrf_exempt
 
 class ScraperTaskView(View):
-    # start_playwright
+    # get_products
     def post(self, request):
         try:
             task_manager = ScraperTaskManager()
