@@ -1,21 +1,29 @@
 from celery import shared_task
 from django_redis import get_redis_connection
-import uuid
+from playwright.async_api import async_playwright
 
 @shared_task
-async def get_details(cache_key):
-    # Retrieve browser and page objects from Redis using the cache key
-    connection = get_redis_connection()
-    browser, page = connection.get(cache_key)
+async def get_details(session_id):
+    async with async_playwright() as playwright:
+        # Retrieve the page URL from the Redis cache using the session ID
+        redis_conn = get_redis_connection()
+        url = redis_conn.get(session_id).decode('utf-8')
+        if not url:
+            raise Exception("URL not found in Redis cache")
+        
+        browser = await playwright.chromium.launch(headless=False)
+        page = await browser.new_page()
+        await page.goto(url)
 
-    # scrape details of a selected product
-    # ...
+        print('Task 2 is running')
 
-    # Generate a unique key for cache entry
-    cache_key = f"playwright_objects_{uuid.uuid4()}"
+        # scrape details of a selected product
+        # ...
 
-    # Store browser and page objects in Redis cache
-    get_redis_connection().set(cache_key, (browser, page))
+        await browser.close()
 
-    # Return the cache key for subsequent tasks
-    return cache_key
+        # Store the page URL in the Redis cache using the session ID as the key
+        redis_conn.set(session_id, page.url)
+
+        # Return the session ID for subsequent tasks
+        return session_id

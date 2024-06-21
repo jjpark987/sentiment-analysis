@@ -1,26 +1,26 @@
 from celery import shared_task
-from playwright.async_api import async_playwright, Playwright
+from playwright.async_api import async_playwright
 from django_redis import get_redis_connection
 import uuid
+import random
+from playwright_stealth import stealth_async
 
 @shared_task
-async def get_products():
+async def get_products(search_query):
     async with async_playwright() as playwright:
         browser = await playwright.chromium.launch(headless=False)
         page = await browser.new_page()
-        print('START_PLAYWRIGHT HAS STARTED AND IT IS WORKING RIGHT NOW')
-        await page.goto("http://books.toscrape.com")
+        await stealth_async(page)
 
-        await page.wait_for_timeout(3000)
+        await page.goto("https://www.amazon.com/Logitech-Wireless-Mouse-M185-Swift/product-reviews/B004YAVF8I/ref=cm_cr_dp_d_show_all_btm?ie=UTF8&reviewerType=all_reviews")
 
-        # code to search on Amazon
-        # ...
+        # Generate a unique session ID
+        session_id = str(uuid.uuid4())
 
-        # Generate a unique key for cache entry
-        cache_key = f"playwright_objects_{uuid.uuid4()}"
+        await browser.close()
 
-        # Store browser and page objects in Redis cache
-        get_redis_connection().set(cache_key, (browser, page))
+        # Store the page URL in the Redis cache using the session ID as the key
+        get_redis_connection().set(session_id, page.url)
 
-        # Return the cache key for subsequent tasks
-        return cache_key
+        # Return the session ID for subsequent tasks
+        return session_id

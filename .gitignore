@@ -5,3 +5,6 @@
 backend/logs/
 
 dump.rdb
+
+__pycache__/
+*.pyc
